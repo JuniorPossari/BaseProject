@@ -1,0 +1,8 @@
+﻿Pasta para colocar os models com os filtros do datatables
+
+Se uma tabela tem várias opções de filtros avançados (IdEntidade, DataInicio, DataFim, etc...)
+É criado um novo model com todas essas opções: "ExemploFM.cs" (FM -> Filter Model)
+E então o método Listar só recebe como parametro o DTParam<ExemploFM> tendo todas opções de filtro que irá precisar
+Caso a tabela não tenha ou não precise de muitos filtros, é só usar DTParam sem passar um Filter Model
+Por padrão ele tem um DefaultFM com algumas opções
+

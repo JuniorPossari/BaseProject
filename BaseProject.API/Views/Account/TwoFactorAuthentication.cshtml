@@ -1,0 +1,174 @@
+﻿@model UsuarioVM
+
+@{
+	ViewData["Title"] = "Autenticação de Dois Fatores";
+}
+
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+	<!--begin::Container-->
+	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+		<!--begin::Page title-->
+		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+			<!--begin::Title-->
+			<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Conta</h1>
+			<!--end::Title-->
+			<!--begin::Separator-->
+			<span class="h-20px border-gray-200 border-start mx-4"></span>
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">					
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a asp-area="" asp-controller="Account" asp-action="TwoFactorAuthentication" class="text-muted text-hover-primary">Autenticação de Dois Fatores</a>
+				</li>
+				<!--end::Item-->
+			</ul>
+			<!--end::Breadcrumb-->
+		</div>
+		<!--end::Page title-->
+		<!--begin::Actions-->
+
+		<!--end::Actions-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Toolbar-->	
+
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<!--begin::Container-->
+	<div id="kt_content_container" class="container-xxl">
+		<!--begin::Card-->
+		<div class="card">
+			<!--begin::Card body-->
+			<div class="card-body">
+				<!--begin::Heading-->
+				<div class="card-px text-center pt-15 pb-15">
+					<!--begin::Title-->
+					<h2 class="fs-2x fw-bolder mb-0">Autenticação de Dois Fatores</h2>
+					<!--end::Title-->
+					<!--begin::Description-->
+					<p class="text-gray-400 fs-4 fw-bold py-7">Clique no botão abaixo para iniciar a
+					<br />configuração da autenticação de dois fatores.</p>
+					<!--end::Description-->
+					<!--begin::Action-->
+					<a href="javascript:;" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal" data-bs-target="#kt_modal_two_factor_authentication">Ativar autenticação de dois fatores</a>
+					<!--end::Action-->
+				</div>
+				<!--end::Heading-->
+				<!--begin::Illustration-->
+				<div class="text-center pb-15 px-5">
+					<img src="~/Metronic/demo1/dist/assets/media/illustrations/sketchy-1/4.png" alt="" class="mw-100 h-200px h-sm-325px" />
+				</div>
+				<!--end::Illustration-->
+			</div>
+			<!--end::Card body-->
+		</div>
+		<!--end::Card-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Post-->
+
+<!--begin::Modal - Two-factor authentication-->
+<div class="modal fade" id="kt_modal_two_factor_authentication" tabindex="-1" aria-hidden="true">
+	<!--begin::Modal header-->
+	<div class="modal-dialog modal-dialog-centered mw-650px">
+		<!--begin::Modal content-->
+		<div class="modal-content">
+			<!--begin::Modal header-->
+			<div class="modal-header flex-stack">
+				<!--begin::Title-->
+				<h2>Autenticação de Dois Fatores</h2>
+				<!--end::Title-->
+				<!--begin::Close-->
+				<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+					<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+					<span class="svg-icon svg-icon-1">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+							<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+						</svg>
+					</span>
+					<!--end::Svg Icon-->
+				</div>
+				<!--end::Close-->
+			</div>
+			<!--begin::Modal header-->
+			<!--begin::Modal body-->
+			<div class="modal-body scroll-y pt-10 pb-15 px-lg-17">				
+				<!--begin::Apps-->
+				<div data-kt-element="apps">
+					<!--begin::Heading-->
+					<h3 class="text-dark fw-bolder mb-7">Apps de Autenticação</h3>
+					<!--end::Heading-->
+					<!--begin::Description-->
+					<div class="text-gray-500 fw-bold fs-6 mb-10">Leia o QR Code usando um aplicativo autenticador como
+					<a href="https://support.google.com/accounts/answer/1066447?hl=en" target="_blank">Google Authenticator</a>,
+					<a href="https://www.microsoft.com/en-us/account/authenticator" target="_blank">Microsoft Authenticator</a>,
+					<a href="https://authy.com/download/" target="_blank">Authy</a>, ou
+					<a href="https://support.1password.com/one-time-passwords/" target="_blank">1Password</a>. Ele irá gerar um código de 6 dígitos para você inserir abaixo.
+					<!--begin::QR code image-->
+					<div class="pt-5 text-center">
+						<img src="~/Metronic/demo1/dist/assets/media/misc/qr.png" alt="" class="mw-150px" />
+					</div>
+					<!--end::QR code image--></div>
+					<!--end::Description-->
+					<!--begin::Notice-->
+					<div class="notice d-flex bg-light-warning rounded border-warning border border-dashed mb-10 p-6">
+						<!--begin::Icon-->
+						<!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+						<span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+								<rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor" />
+								<rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+							</svg>
+						</span>
+						<!--end::Svg Icon-->
+						<!--end::Icon-->
+						<!--begin::Wrapper-->
+						<div class="d-flex flex-stack flex-grow-1">
+							<!--begin::Content-->
+							<div class="fw-bold">
+								<div class="fs-6 text-gray-700">Se você tiver problemas para ler o QR Code, selecione a entrada manual em seu aplicativo e insira seu email e o código abaixo:
+								<div class="fw-bolder text-dark pt-2">KBSS3QDAAFUMCBY63YCKI5WSSVACUMPN</div></div>
+							</div>
+							<!--end::Content-->
+						</div>
+						<!--end::Wrapper-->
+					</div>
+					<!--end::Notice-->
+					<!--begin::Form-->
+					<form data-kt-element="apps-form" class="form" action="#">
+						<!--begin::Input group-->
+						<div class="mb-10 fv-row">
+							<input type="text" class="form-control form-control-lg form-control-solid" placeholder="Digite o código de autenticação" name="code" />
+						</div>
+						<!--end::Input group-->
+						<!--begin::Actions-->
+						<div class="d-flex flex-center">
+							<button type="reset" data-kt-element="apps-cancel" class="btn btn-secondary me-3" data-bs-dismiss="modal">Cancelar</button>
+							<button type="submit" data-kt-element="kt_2fa_submit" class="btn btn-primary">Enviar</button>
+						</div>
+						<!--end::Actions-->
+					</form>
+					<!--end::Form-->
+				</div>
+				<!--end::Apps-->				
+			</div>
+			<!--begin::Modal body-->
+		</div>
+		<!--end::Modal content-->
+	</div>
+	<!--end::Modal header-->
+</div>
+<!--end::Modal - Two-factor authentication-->
+
+@*<script src="~/js/Controllers/Account/Account.js" asp-append-version="true" ></script>
+<script type="text/javascript">    
+	$(function () {
+		AccountAPI.init2FA();
+	});
+</script>*@

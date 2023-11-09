@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "jquery.fileDownload@1.4.2",
+      "destination": "wwwroot/lib/jquery.fileDownload/",
+      "files": [
+        "jquery.fileDownload.min.js"
+      ]
+    },
+    {
+      "library": "highcharts@10.1.0",
+      "destination": "wwwroot/lib/highcharts/",
+      "files": [
+        "highcharts.min.js",
+        "modules/accessibility.min.js",
+        "modules/export-data.min.js",
+        "modules/funnel.min.js",
+        "modules/exporting.min.js",
+        "modules/no-data-to-display.min.js"
+      ]
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/",
+      "files": [
+        "js/i18n/pt-BR.min.js"
+      ]
+    }
+  ]
+}

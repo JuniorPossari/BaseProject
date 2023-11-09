@@ -1,0 +1,68 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "ApplicationDbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "BaseProject.DAO",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Arquivo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Content]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Empresa]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EmpresaLogo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Log]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[LogAcessoUsuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Usuario]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsuarioFoto]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "(LocalDB)\\MSSQLLocalDB.BaseProject_Dev",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

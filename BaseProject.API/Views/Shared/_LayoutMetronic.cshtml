@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!--begin::Head-->
+<head>
+    <base href="">
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - BaseProject</title>
+    <meta name="description" content="Descrição do site" />
+    <meta name="keywords" content="Palavra-chaves do site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="BaseProject" />
+    <meta property="og:url" content="https://keenthemes.com/metronic" />
+    <meta property="og:site_name" content="BaseProject" />
+    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <link rel="shortcut icon" href="~/icon/p4t-negative.ico" asp-append-version="true" />
+
+    <!--begin::Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <!--end::Fonts-->
+    <!--begin::Stylesheets-->
+    <link href="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/Metronic/demo1/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/Metronic/demo1/dist/assets/plugins/custom/cookiealert/cookiealert.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="~/css/Site.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+
+    <!--end::Stylesheets-->
+    <!--begin::JQuery-->
+    <script src="~/lib/jquery/jquery.min.js" asp-append-version="true"></script>
+
+    <!--end::JQuery-->
+    <!--begin::Javascript-->
+    <script>var hostUrl = "/Metronic/demo1/dist/assets/";</script>
+
+
+    <script src="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/js/scripts.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/js/widgets.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/plugins/custom/cookiealert/cookiealert.bundle.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/js/custom/widgets.js" asp-append-version="true"></script>
+    <script src="~/Metronic/demo1/dist/assets/js/custom/apps/chat/chat.js" asp-append-version="true"></script>
+    <script src="~/js/Site.js" asp-append-version="true"></script>
+    <script src="~/js/DefaultDataTablesOptions.js" asp-append-version="true"></script>
+    <script src="~/js/DefaultDateRangePickerOptions.js" asp-append-version="true"></script>
+    <script src="~/js/DefaultDropzoneOptions.js" asp-append-version="true"></script>
+    <script src="~/js/DefaultSelect2Options.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery.fileDownload/jquery.fileDownload.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/highcharts.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/modules/accessibility.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/modules/export-data.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/modules/exporting.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/modules/funnel.min.js" asp-append-version="true"></script>
+    <script src="~/lib/highcharts/modules/no-data-to-display.min.js" asp-append-version="true"></script>
+    <script src="~/lib/select2/js/i18n/pt-BR.min.js" asp-append-version="true"></script>
+    <script asp-append-version="true" src="~/js/jquery.datetimepicker.full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script asp-append-version="true" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.pt-BR.min.js" integrity="sha512-mVkLPLQVfOWLRlC2ZJuyX5+0XrTlbW2cyAwyqgPkLGxhoaHNSWesYMlcUjX8X+k45YB8q90s88O7sos86636NQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script asp-append-version="true" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/pt-BR.min.js" integrity="sha512-H1yBoUnrE7X+NeWpeZvBuy2RvrbvLEAEjX/Mu8L2ggUBja62g1z49fAboGidE5YEQyIVMCWJC9krY4/KEqkgag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script asp-append-version="true" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-10-year-range.min.js" integrity="sha512-48hjVXIRd5d3sGKDfphGflqnxq91J14nwVO5Q6dHhK66n9XjP4zg0YR8IJRNZSJAVCrjjTU4fgpQgXeyx2lHNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="~/js/custom/bundle.js" asp-append-version="true"></script>
+
+    <!--end::Javascript-->
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" data-kt-aside-minimize="on" class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed" style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+
+            <partial name="Metronic/_Aside" />
+
+            <!--begin::Wrapper-->
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+
+                <partial name="Metronic/_Header">
+
+                    <!--begin::Content-->
+                    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                        @RenderBody()
+                    </div>
+                    <!--end::Content-->
+
+                    <partial name="Metronic/_Footer">
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Root-->
+    <!--end::Main-->
+    <!--begin::Engage drawers-->
+    <partial name="Metronic/_ChatDrawer">
+        <partial name="Metronic/_HelpDrawer">
+            <!--end::Engage drawers-->
+
+            <partial name="Metronic/_EngageToolbar">
+
+                <partial name="Metronic/_ScrollTop">
+
+                    <partial name="Metronic/_CookieAlert">
+
+
+</body>
+<!--end::Body-->
+</html>
+
+

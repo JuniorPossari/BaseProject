@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<!--begin::Head-->
+	<head>
+		<base href="">
+		<meta charset="utf-8" />
+		<title>@ViewData["Title"] - BaseProject</title>
+		<meta name="description" content="Descrição do site" />
+		<meta name="keywords" content="Palavra-chaves do site" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="BaseProject" />
+		<meta property="og:url" content="https://keenthemes.com/metronic" />
+		<meta property="og:site_name" content="BaseProject" />
+		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+		<link rel="shortcut icon" href="~/icon/p4t-negative.ico" asp-append-version="true" />
+
+		<!--begin::Fonts-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" asp-append-version="true" />
+		<!--end::Fonts-->
+		
+		<!--begin::Stylesheets-->
+		<link href="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<link href="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<link href="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<link href="~/Metronic/demo1/dist/assets/css/style.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<link href="~/Metronic/demo1/dist/assets/plugins/custom/cookiealert/cookiealert.bundle.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<link href="~/css/Site.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+		<!--end::Stylesheets-->
+
+		<!--begin::JQuery-->		
+		<script src="~/lib/jquery/jquery.min.js" asp-append-version="true"></script>
+		<!--end::JQuery-->
+	</head>
+	<!--end::Head-->
+	<!--begin::Body-->
+	<body id="kt_body" class="bg-body">
+		<!--begin::Main-->
+		<!--begin::Root-->
+		<div class="d-flex flex-column flex-root">
+			<!--begin::Authentication-->
+			<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(/Metronic/demo1/dist/assets/media/illustrations/sketchy-1/14.png">
+				<!--begin::Content-->
+				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+					<!--begin::Logo-->
+					<a asp-area="" asp-controller="Dashboard" asp-action="Index" class="mb-12">
+						<img alt="Logo" src="~/img/logo-p4t-negative.png" class="h-50px" />
+					</a>
+					<!--end::Logo-->
+
+					@RenderBody()
+					
+				</div>
+				<!--end::Content-->				
+			</div>
+			<!--end::Authentication-->
+		</div>
+		<!--end::Root-->
+		<!--end::Main-->
+
+		<partial name="Metronic/_CookieAlert">
+
+		<!--begin::Javascript-->
+		<script>var hostUrl = "/Metronic/demo1/dist/assets/";</script>
+		<script src="~/Metronic/demo1/dist/assets/plugins/global/plugins.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/js/scripts.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/js/widgets.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/plugins/custom/cookiealert/cookiealert.bundle.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/js/custom/widgets.js" asp-append-version="true"></script>
+		<script src="~/Metronic/demo1/dist/assets/js/custom/apps/chat/chat.js" asp-append-version="true"></script>				
+		<script src="~/js/Site.js" asp-append-version="true"></script>
+		<script src="~/js/DefaultDataTablesOptions.js" asp-append-version="true"></script>
+		<script src="~/js/DefaultDateRangePickerOptions.js" asp-append-version="true"></script>
+		<script src="~/js/DefaultDropzoneOptions.js" asp-append-version="true"></script>
+		<script src="~/js/DefaultSelect2Options.js" asp-append-version="true"></script>
+		<script src="~/lib/jquery.fileDownload/jquery.fileDownload.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/highcharts.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/modules/accessibility.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/modules/export-data.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/modules/exporting.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/modules/funnel.min.js" asp-append-version="true"></script>
+		<script src="~/lib/highcharts/modules/no-data-to-display.min.js" asp-append-version="true"></script>
+		<script src="~/lib/select2/js/i18n/pt-BR.min.js" asp-append-version="true"></script>	
+		<!--end::Javascript-->
+	</body>
+	<!--end::Body-->
+</html>

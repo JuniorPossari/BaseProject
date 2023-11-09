@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+		.break {
+			word-break: break-all;
+		}
+    </style>
+</head>
+<body>
+    <div style="font-family:Arial,Helvetica,sans-serif; line-height: 1.5; font-weight: normal; font-size: 15px; color: #2F3044; min-height: 100%; margin:0; padding:0; width:100%; background-color:#edf2f7">
+        <br>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;margin:0 auto; padding:0; max-width:600px">
+            <tbody>
+                <tr>
+                    <td align="left">
+                        <div style="text-align:left; margin: 0 20px; padding: 40px; background-color:#ffffff; border-radius: 6px">
+                            <!--begin:Email content-->
+                            <div style="padding-bottom: 30px; font-size: 17px;">
+                                <strong>Olá, {{NOME}}!</strong>
+                            </div>
+
+                            <div style="padding-bottom: 30px">Você está recebendo esse email pois foi solicitado uma redefinição de senha para sua conta. Para proceder com a redefinição de senha por favor clique no botão abaixo:</div>
+
+                            <div style="padding-bottom: 40px; text-align:center;">
+                                <a href="{{URL}}" rel="noopener" style="text-decoration:none;display:inline-block;text-align:center;padding:0.75575rem 1.3rem;font-size:0.925rem;line-height:1.5;border-radius:0.35rem;color:#ffffff;background-color:#009EF7;border:0px;margin-right:0.75rem!important;font-weight:600!important;outline:none!important;vertical-align:middle" target="_blank">Redefinir Senha</a>
+                            </div>
+
+                            <div style="padding-bottom: 30px">Este link irá expirar em 5 minutos. Se você não solicitou uma redefinição de senha, pode ignorar esse email.</div>
+
+                            <div style="border-bottom: 1px solid #eeeeee; margin: 15px 0"></div>
+
+                            <div style="padding-bottom: 50px;">
+                                <p style="margin-bottom: 10px;">O botão não está funcionando? Tente colar este link em seu navegador:</p>
+                                <a class="break" href="{{URL}}" rel="noopener" target="_blank" style="text-decoration:none;color: #009EF7">{{URL}}</a>
+                            </div>
+
+                            <!--end:Email content-->
+                            <div style="padding-bottom: 10px">
+                                Att BaseProject Team!
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-size: 13px; text-align:center;padding: 20px; color: #6d6e7c;">
+                        <p>
+                            Copyright © <a href="" rel="noopener" target="_blank">BaseProject</a>.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

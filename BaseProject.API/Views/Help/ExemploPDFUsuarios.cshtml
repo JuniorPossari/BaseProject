@@ -1,0 +1,119 @@
+﻿@model BaseProject.DAO.Models.Usuario[]
+@{
+	Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXEMPLO PDF USUÁRIOS</title>
+
+  <style>
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .page-breaker {
+        clear: both;
+        display: block;
+        border: 1px solid transparent;
+        page-break-after: always;
+    }
+
+    .page {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .tblRelatorio {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 22px;
+        border-spacing: unset;
+        border-collapse: collapse;
+    }
+
+    .tblRelatorio th {
+        text-align: center;
+        background-color: black;
+        color: white;
+    }
+
+    .tblRelatorio td, .tblRelatorio th {
+        border: 1px solid #7f7f7f;
+        padding: 0.5px;
+    }
+
+    .tblRelatorio tbody tr td {
+        text-align: center;
+    }
+
+    .tblRelatorio tfoot tr td {
+        background-color: black;
+        text-align: center;
+        color: white;
+    }
+
+    .titulo {
+        text-align: center !important;
+    }
+
+  </style>
+
+</head>
+
+<body class="document">
+
+    <div class="page">
+
+        <div class="titulo">
+            <h1>EXEMPLO PDF USUÁRIOS</h1>
+        </div>
+
+        <table class="tblRelatorio">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+		            <th>EMAIL</th>
+	                <th>CPF</th>
+		            <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if(Model != null&& Model.Length > 0)
+	            {
+		            foreach(var usuario in Model)
+		            {
+			            var nome = usuario.Nome;
+			            var email = usuario.Email;
+			            var cpf = usuario.CPF;
+			            var ativo = usuario.Ativo ? "Ativo" : "Inativo";
+
+			            <tr>
+				            <td>@nome</td>
+				            <td>@email</td>
+				            <td>@cpf</td>
+				            <td>@ativo</td>
+			            </tr>
+		            }
+	            }
+	            else
+	            {
+		            <tr>
+			            <td colspan="4">Nenhum usuário encontrado!</td>
+		            </tr>
+	            }
+            </tbody>      
+
+        </table>
+
+    </div>
+
+</body>
+</html>

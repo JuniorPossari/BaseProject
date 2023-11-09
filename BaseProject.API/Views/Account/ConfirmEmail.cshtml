@@ -1,0 +1,29 @@
+﻿@model EmailConfirmVM
+
+@{
+    Layout = "_LayoutMetronicAccount";
+    ViewData["Title"] = "Confirmar Email";
+}
+
+<div class="login-form login-signin py-11">
+
+    <form class="form w-100">
+
+        <div class="text-center pb-8">
+            <h3 class="font-weight-bolder text-dark display5">Confirmar Email</h3>
+            <p class="text-muted font-weight-bold font-size-h4">Insira seu email para enviarmos um link de confirmação!</p>
+        </div>
+
+        <div class="fv-row mb-10">
+            <label class="font-size-h6 font-weight-bolder text-dark" asp-for="Email"></label>
+            <input class="form-control form-control-lg form-control-solid" type="text" name="email" asp-for="Email" />
+        </div>
+
+        <div class="fv-row mb-10">
+            <button type="submit" id="kt_confirm_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mx-4">Enviar</button>
+        </div>
+    </form>
+
+</div>
+        
+

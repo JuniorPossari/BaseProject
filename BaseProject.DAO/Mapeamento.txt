@@ -1,0 +1,38 @@
+﻿Para mapear as entidades do banco automaticamente:
+
+1° Clique com botão direito em BaseProject.DAO e vá em: EF Core Power Tools -> Reverse Engineer
+(Caso não tenha essa opção, acesse https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools, baixe e instale a ferramenta no seu Visual Studio)
+
+
+2° Na janela, clique em Add e faça a conexão com o banco de dados ou escolha o banco caso já esteja conectado, então de OK
+(Você pode ver os dados de conexão em BaseProject.API -> appsettings.json, mas é o mesmo padrão de conexão do SQL Server Management Studio)
+
+
+3° Nessa etapa verifique se todas as tabelas do banco estão selecionadas menos as que comecem com "AspNet", então de OK
+(É muito importante que as tabelas com "AspNet" no nome estejam desmarcadas ou dará erro no final)
+
+
+4° Por padrão o projeto já vai estár configurado corretamente nessa etapa, então apenas de OK e aguarde o mapeamento
+
+
+5° Após a finalização, vá em BaseProject.DAO -> Data -> ApplicationDbContext.cs e substitua DbContext por IdentityDbContext<AspNetUser>
+(É necessário importar o pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore, você pode fazer isso dando CTRL + . em cima do IdentityDbContext)
+
+
+6° Ainda no ApplicationDbContext, encontre o método OnModelCreating e dentro dele, no começo, adicione o seguinte código:
+
+base.OnModelCreating(modelBuilder);
+
+
+7° Em BaseProject.DAO -> Models -> Usuario.cs no final da classe adicione o seguinte código:
+
+[ForeignKey("IdAspNetUser")]
+[InverseProperty("Usuario")]
+public virtual AspNetUser IdAspNetUserNavigation { get; set; }
+
+
+Com isso já é para estar tudo correto para iniciar o projeto novamente
+(Caso precise de ajuda fale com o dev responsável ou dependendo da situação ligue 193)
+
+
+

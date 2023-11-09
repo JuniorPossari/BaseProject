@@ -1,0 +1,309 @@
+﻿@model UsuarioVM
+
+@{
+	var isMyProfile = Model.IdAspNetUserNavigation.UserName == User.Identity.Name;
+	ViewData["Title"] = isMyProfile ? "Perfil" : Model.Nome;
+}
+
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+	<!--begin::Container-->
+	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+		<!--begin::Page title-->
+		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+			<!--begin::Title-->
+			<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Conta</h1>
+			<!--end::Title-->
+			<!--begin::Separator-->
+			<span class="h-20px border-gray-200 border-start mx-4"></span>
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">					
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a asp-area="" asp-controller="Account" asp-action="Profile" class="text-muted text-hover-primary">@(isMyProfile ? "Perfil" : Model.Nome)</a>
+				</li>
+				<!--end::Item-->
+			</ul>
+			<!--end::Breadcrumb-->
+		</div>
+		<!--end::Page title-->
+		<!--begin::Actions-->
+
+		<!--end::Actions-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Toolbar-->	
+
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<!--begin::Container-->
+	<div id="kt_content_container" class="container-xxl">
+			
+		<!--begin::Perfil-->
+		<div class="card mb-5 mb-xl-10">
+			<!--begin::Card header-->
+			<div class="card-header border-0">
+				<!--begin::Card title-->
+				<div class="card-title m-0">
+					<h3 class="fw-bolder m-0">@(isMyProfile ? "Perfil" : Model.Nome)</h3>
+				</div>
+				<!--end::Card title-->
+			</div>
+			<!--begin::Card header-->
+			<!--begin::Content-->
+			<div>
+				<!--begin::Form-->
+				<form id="kt_account_profile_details_form" class="form">
+					<!--begin::Card body-->
+					<div class="card-body border-top p-9">
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Foto</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-7">
+								<!--begin::Image input-->
+								<div id="kt_image_input_control" class="image-input image-input-outline @(string.IsNullOrEmpty(Model.FotoDataUrl) ? "image-input-empty" : "")" data-kt-image-input="true" style="background-image: url('/Metronic/demo1/dist/assets/media/svg/avatars/blank.svg')">
+									<!--begin::Preview existing avatar-->
+									<div class="image-input-wrapper w-125px h-125px" style="background-image: @(string.IsNullOrEmpty(Model.FotoDataUrl) ? "none;" : $"url({Model.FotoDataUrl});")"></div>
+									<!--end::Preview existing avatar-->
+									@if (isMyProfile)
+									{
+										<!--begin::Label-->
+										<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" data-bs-placement="right" title="Editar">
+											<i class="bi bi-pencil-fill fs-7"></i>
+											<!--begin::Inputs-->
+											<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+											<input type="hidden" name="avatar_remove" />
+											<!--end::Inputs-->
+										</label>
+										<!--end::Label-->
+										<!--begin::Cancel-->
+										<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" data-bs-placement="right" title="Cancelar">
+											<i class="bi bi-x fs-2"></i>
+										</span>
+										<!--end::Cancel-->
+										<!--begin::Remove-->
+										<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" data-bs-placement="right" title="Deletar">
+											<i class="bi bi-x fs-2"></i>
+										</span>
+										<!--end::Remove-->
+									}										
+								</div>
+								<!--end::Image input-->
+								@if (isMyProfile)
+								{
+									<!--begin::Hint-->
+									<div class="form-text">Tipos de imagens permitidas: png, jpg, jpeg.</div>
+									<!--end::Hint-->
+								}									
+							</div>
+							<!--end::Col-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Nome</label>
+							<!--end::Label-->
+							<!--begin::Label-->
+							<label class="col-lg-7 col-form-label fs-6 text-gray-600">@Model.Nome</label>
+							<!--end::Label-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Email</label>
+							<!--end::Label-->
+							<!--begin::Label-->
+							<label class="col-lg-7 col-form-label fs-6 text-gray-600">@Model.Email</label>
+							<!--end::Label-->
+						</div>
+						<!--end::Input group-->
+						@if (isMyProfile)
+						{
+							<!--begin::Input group-->
+							<div class="row mb-6">
+								<!--begin::Label-->
+								<label class="col-lg-5 col-form-label fw-bold fs-6">CPF</label>
+								<!--end::Label-->
+								<!--begin::Label-->
+								<label class="col-lg-7 col-form-label fs-6 text-gray-600">@Model.CPF</label>
+								<!--end::Label-->
+							</div>
+							<!--end::Input group-->
+						}							
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Empresa</label>
+							<!--end::Label-->
+							<!--begin::Label-->
+							<label class="col-lg-7 col-form-label fs-6 text-gray-600">@Model.IdEmpresaNavigation.NomeFantasia</label>
+							<!--end::Label-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Data de cadastro</label>
+							<!--end::Label-->
+							<!--begin::Label-->
+							<label class="col-lg-7 col-form-label fs-6 text-gray-600">@Model.DataCadastro</label>
+							<!--end::Label-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-0">
+							<!--begin::Label-->
+							<label class="col-lg-5 col-form-label fw-bold fs-6">Status</label>
+							<!--begin::Label-->
+							<!--begin::Label-->
+							<div class="col-lg-7 d-flex align-items-center">
+								<div class="badge badge-lg @(Model.Ativo ? "badge-light-success" : "badge-light-danger")">@(Model.Ativo ? "Ativo" : "Inativo")</div>
+							</div>
+							<!--begin::Label-->
+						</div>
+						<!--end::Input group-->
+					</div>
+					<!--end::Card body-->	
+					@if (isMyProfile)
+					{
+						<!--begin::Actions-->
+						<div class="card-footer d-flex justify-content-end py-6 px-9">
+							<button type="submit" class="btn btn-primary" id="kt_profile_submit">Salvar</button>
+						</div>
+						<!--end::Actions-->
+					}
+						
+				</form>
+				<!--end::Form-->
+			</div>
+			<!--end::Content-->
+		</div>
+		<!--end::Perfil-->
+
+		@if (isMyProfile)
+		{
+			<!--begin::Conta-->
+			<div class="card mb-5 mb-xl-10">
+				<!--begin::Card header-->
+				<div class="card-header border-0">
+					<div class="card-title m-0">
+						<h3 class="fw-bolder m-0">Conta</h3>
+					</div>
+				</div>
+				<!--end::Card header-->
+				<!--begin::Content-->
+				<div>
+					<!--begin::Card body-->
+					<div class="card-body border-top p-9">
+						<!--begin::Email Address-->
+						<div class="d-flex flex-wrap align-items-center">
+							<!--begin::Label-->
+							<div id="kt_signin_email">
+								<div class="fs-6 fw-bolder mb-1">Login</div>
+								<div class="fw-bold text-gray-600">@Model.IdAspNetUserNavigation.UserName</div>
+							</div>
+							<!--end::Label-->
+						</div>
+						<!--end::Email Address-->
+						<!--begin::Separator-->
+						<div class="separator separator-dashed my-6"></div>
+						<!--end::Separator-->
+						<!--begin::Password-->
+						<div class="d-flex flex-wrap align-items-center mb-10">
+							<!--begin::Label-->
+							<div id="kt_signin_password">
+								<div class="fs-6 fw-bolder mb-1">Senha</div>
+								<div class="fw-bold text-gray-600">************</div>
+							</div>
+							<!--end::Label-->
+							<!--begin::Action-->
+							<div class="ms-auto">
+								<a asp-area="" asp-controller="Account" asp-action="ChangePassword" class="btn btn-light btn-active-light-primary">Editar Senha</a>
+							</div>
+							<!--end::Action-->
+						</div>
+						<!--end::Password-->
+					</div>
+					<!--end::Card body-->					
+				</div>
+				<!--end::Content-->
+			</div>
+			<!--end::Conta-->
+		}
+
+		@if (isMyProfile)
+		{
+			<!--begin::Acessos-->
+			<div id="Acessos" class="card mb-5 mb-xl-10">
+				<!--begin::Card header-->
+				<div class="card-header border-0">
+					<div class="card-title m-0">
+						<h3 class="fw-bolder m-0">Acessos</h3>
+					</div>
+				</div>
+				<!--end::Card header-->
+				<!--begin::Content-->
+				<div>
+					<!--begin::Card body-->
+					<div class="card-body border-top p-9">
+							
+						<!--begin: Filters-->
+						<div class="row mb-2">
+
+							<div class="col-md-3 mb-2">
+								<!--begin::Search-->
+								<div class="d-flex align-items-center position-relative">
+									<!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+									<span class="svg-icon svg-icon-1 position-absolute ms-4">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+											<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
+											<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
+										</svg>
+									</span>
+									<!--end::Svg Icon-->
+									<input id="kt_datatable_search" type="text" data-kt-ecommerce-product-filter="search" class="form-control form-control-solid ps-14" placeholder="Pesquisar" />
+								</div>
+								<!--end::Search-->
+							</div>
+
+						</div>
+						<!--end: Filters-->
+
+						<!--begin: Datatable-->
+						<div class="datatable-standard">
+							<table id="kt_datatable" class="table table-hover align-middle border rounded table-row-bordered fs-6 g-4">
+								<thead class="text-start text-gray-400 fw-bolder fs-7 text-uppercase"></thead>
+								<tbody class="fw-bold text-gray-600"></tbody>
+							</table>
+						</div>					
+						<!--end: Datatable-->
+
+					</div>
+					<!--end::Card body-->					
+				</div>
+				<!--end::Content-->
+			</div>
+			<!--end::Acessos-->
+		}
+			
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Post-->
+
+@if (isMyProfile)
+{
+	<script src="~/js/Controllers/Account/Account.js" asp-append-version="true" ></script>
+	<script type="text/javascript">    
+		$(function () {
+			AccountAPI.initProfile();
+		});
+	</script>
+}

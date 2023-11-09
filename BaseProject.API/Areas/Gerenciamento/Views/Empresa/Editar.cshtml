@@ -1,0 +1,178 @@
+﻿@model EmpresaVM
+
+@{
+    Layout = "_LayoutMetronic";
+    ViewData["Title"] = "Editar Empresa";
+}
+					
+<!--begin::Toolbar-->
+<div class="toolbar" id="kt_toolbar">
+	<!--begin::Container-->
+	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+		<!--begin::Page title-->
+		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+			<!--begin::Title-->
+			<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Gerenciamento</h1>
+			<!--end::Title-->
+			<!--begin::Separator-->
+			<span class="h-20px border-gray-200 border-start mx-4"></span>
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a asp-area="Gerenciamento" asp-controller="Empresa" asp-action="Index" class="text-muted text-hover-primary">Empresas</a>
+				</li>
+				<!--end::Item-->
+				<!--begin::Item-->
+				<li class="breadcrumb-item">
+					<span class="bullet bg-gray-300 w-5px h-2px"></span>
+				</li>
+				<!--end::Item-->
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a asp-area="Gerenciamento" asp-controller="Empresa" asp-action="Editar" class="text-muted text-hover-primary">Editar</a>
+				</li>
+				<!--end::Item-->
+			</ul>
+			<!--end::Breadcrumb-->
+		</div>
+		<!--end::Page title-->
+		<!--begin::Actions-->
+
+		<!--end::Actions-->
+	</div>
+	<!--end::Container-->
+</div>
+<!--end::Toolbar-->					
+
+<input type="hidden" id="HdnIdEmpresa" value="@Model.Id" />
+
+<!--begin::Post-->
+<div class="post d-flex flex-column-fluid" id="kt_post">
+	<!--begin::Container-->
+	<div id="kt_content_container" class="container-fluid">
+
+		<div class="card card-bordered">
+			<!--begin::Card header-->
+			<div class="card-header align-items-center py-3 gap-2 gap-md-5">
+				<!--begin::Card title-->
+				<div class="card-title">
+					<h3>Editar Empresa</h3>
+				</div>
+				<!--end::Card title-->
+				<!--begin::Card toolbar-->
+				<div class="card-toolbar flex-row-fluid justify-content-end gap-5">						
+					<!--begin::Actions-->
+					<!--end::Actions-->
+				</div>
+				<!--end::Card toolbar-->
+			</div>
+			<!--end::Card header-->
+			<!--begin::Card body-->
+			<div class="card-body">
+					
+				<form class="form w-100" novalidate="novalidate" id="frmEmpresa">
+
+					<div class="row mb-10">
+
+						<div class="col-md-6">
+							<!--begin::Input-->
+							<div class="fv-row">
+								<label class="required form-label">Razão Social</label>
+								<input type="text" name="razao_social" class="form-control mb-2" placeholder="Razão Social" value="@Model.RazaoSocial" maxlength="150" />
+								<div class="text-muted fs-7">Nome de registro da empresa</div>
+							</div>
+							<!--end::Input-->
+						</div>
+
+						<div class="col-md-6">
+							<!--begin::Input-->
+							<div class="fv-row">
+								<label class="required form-label">Nome Fantasia</label>
+								<input type="text" name="nome_fantasia" class="form-control mb-2" placeholder="Nome Fantasia" value="@Model.NomeFantasia" maxlength="150" />
+								<div class="text-muted fs-7">Nome popular da empresa</div>
+							</div>
+							<!--end::Input-->
+						</div>
+
+					</div>
+
+					<div class="row mb-10">
+
+						<div class="col-md-6">
+							<!--begin::Input-->
+							<div class="fv-row">
+								<label class="required form-label">CNPJ</label>
+								<input type="text" name="cnpj" class="form-control mb-2 mw-225px" placeholder="CNPJ" value="@Model.CNPJ" maxlength="18" />
+								<div class="text-muted fs-7">Documento de identificação da empresa</div>
+							</div>								
+							<!--end::Input-->
+						</div>	
+
+						<div class="col-md-6">
+							<!--begin::Input-->
+							<div class="fv-row">
+								<label class="form-label">Ativa?<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top" title="Se desativado, bloqueia o acesso de todos usuários da empresa no sistema"></i></label>
+								<div class="form-check form-switch form-check-custom form-check-primary form-check-solid mt-2 mb-4">
+									<input type="checkbox" name="ativa" class="form-check-input" value="" @(Model.Ativa ? "checked" : "") />
+								</div>
+								<div class="text-muted fs-7">Empresa ativa no sistema?</div>
+							</div>	
+							<!--end::Input-->
+						</div>
+
+					</div>
+
+					<div class="row">
+
+						<div class="col-md-12">
+							<!--begin::Input-->
+							<div class="fv-row">
+								<label class="form-label">Logo</label>
+								<!--begin::Dropzone-->
+								<div class="dropzone mb-2" id="kt_dropzone">
+									<div class="dz-message needsclick">
+										<i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+										<div class="ms-4">
+											<h3 class="fs-5 fw-bolder text-gray-900 mb-1">Arraste e solte os arquivos aqui ou clique para fazer upload</h3>
+											<span class="fs-7 fw-bold text-gray-400">Tamanho máximo 10MB</span>
+										</div>
+									</div>
+								</div>
+								<!--end::Dropzone-->
+								<div class="text-muted fs-7">Símbolo da empresa</div>
+							</div>
+							<!--end::Input-->
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+			<!--end::Card body-->
+			<!--begin::Card footer-->
+			<div class="card-footer py-5">
+				<div class="d-flex justify-content-between">
+					<a asp-area="Gerenciamento" asp-controller="Empresa" asp-action="Index" class="btn btn-secondary">Voltar</a>
+					<div class="d-flex">
+						<a id="btnEditar" class="btn btn-primary">Editar</a>
+					</div>
+				</div>						
+			</div>
+			<!--end::Card footer-->
+		</div>
+
+	</div>
+	<!--end::Container-->													
+</div>
+<!--end::Post-->
+
+<script src="~/js/Areas/Gerenciamento/Empresa/Empresa.js" asp-append-version="true" ></script>
+<script type="text/javascript">    
+    $(function () {
+        var preloadFiles = @Html.Raw(Json.Serialize(Model.EmpresaLogo));
+		EmpresaAPI.initEditar(preloadFiles);
+    });
+</script>

@@ -1,0 +1,17 @@
+﻿@{
+	var roles = User.Claims.Where(x => x.Type == ClaimTypes.Role).Select(x => x.Value).ToList();
+
+	var isAdmin = roles.Contains("Administrador");
+	var isGerente = roles.Contains("Gerente") || isAdmin;
+}
+
+@if (isAdmin)
+{
+	<!--begin::Engage toolbar-->
+	<div class="engage-toolbar d-flex position-fixed px-5 fw-bolder zindex-2 top-50 end-0 transform-90 mt-20 gap-2">			
+		<!--begin::Help drawer toggle-->
+		<button id="kt_help_toggle" class="engage-help-toggle btn btn-flex h-35px bg-body btn-color-gray-700 btn-active-color-gray-900 shadow-sm px-5 rounded-top-0" title="Help" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-dismiss="click" data-bs-trigger="hover">Help</button>
+		<!--end::Help drawer toggle-->			
+	</div>
+	<!--end::Engage toolbar-->
+}

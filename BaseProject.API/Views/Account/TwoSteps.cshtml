@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "_LayoutMetronicAccount";
+    ViewData["Title"] = "Verificação em duas etapas";
+}
+
+<input id="hdn-user-name" type="hidden" class="d-none" value="@ViewBag.UserName" />
+
+<!--begin::Wrapper-->
+<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+	<!--begin::Form-->
+	<form class="form w-100 mb-10" novalidate="novalidate" data-kt-redirect-url="/Dashboard/Index" id="kt_sing_in_two_steps_form">
+		<!--begin::Icon-->
+		<div class="text-center mb-10">
+			<!--begin::Svg Icon | path: assets/media/icons/duotune/communication/com011.svg-->
+			<span class="svg-icon svg-icon-muted svg-icon-5hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+			<path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z" fill="currentColor"/>
+			<path d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z" fill="currentColor"/>
+			</svg></span>
+			<!--end::Svg Icon-->
+		</div>
+		<!--end::Icon-->
+		<!--begin::Heading-->
+		<div class="text-center mb-10">
+			<!--begin::Title-->
+			<h1 class="text-dark mb-3">Verificação em duas etapas</h1>
+			<!--end::Title-->
+			<!--begin::Sub-title-->
+			<div class="text-muted fw-bold fs-5 mb-5">Digite o código de verificação que enviamos para</div>
+			<!--end::Sub-title-->
+			<!--begin::Mobile no-->
+			<div class="fw-bolder text-dark fs-3">@ViewBag.UserName</div>
+			<!--end::Mobile no-->
+		</div>
+		<!--end::Heading-->
+		<!--begin::Section-->
+		<div class="mb-10 px-md-10">
+			<!--begin::Label-->
+			<div class="d-flex flex-center fw-bolder text-start text-dark fs-6 mb-3 ms-1">Digite seu código de segurança de 6 dígitos</div>
+			<!--end::Label-->
+			<!--begin::Input group-->
+			<div class="d-flex flex-center ">
+				<div class="fv-row" style="width: 140px !important;">
+					<input class="form-control form-control-lg form-control-solid text-center pr-0" type="text" id="securitycode" name="securitycode"  />
+				</div>
+			</div>			
+			<!--begin::Input group-->
+		</div>
+		<!--end::Section-->
+		<!--begin::Submit-->
+		<div class="d-flex flex-center">
+			<!--begin::Submit button-->
+			<button type="submit" id="kt_sing_in_two_steps_submit" class="btn btn-lg btn-primary fw-bolder">Enviar</button>
+			<!--end::Submit button-->	
+		</div>
+		<!--end::Submit-->
+	</form>
+	<!--end::Form-->
+	<!--begin::Notice-->
+	<div class="text-center fw-bold fs-5">
+		<span class="text-muted me-1">Não recebeu o código?</span>
+		<a href="javascript:;" id="btn-resend-security-code" class="link-primary fw-bolder fs-5 me-1">Reenvie</a>
+	</div>
+	<!--end::Notice-->
+</div>
+<!--end::Wrapper-->
+
+<script src="~/js/Controllers/Account/Account.js" asp-append-version="true" ></script>
+<script type="text/javascript">    
+    $(function () {
+		AccountAPI.initSignInTwoSteps();
+    });
+</script>

@@ -1,0 +1,12 @@
+﻿Pasta para colocar os models necessários para obter os resultados de uma procedure
+
+Aqui estão os exemplos de como incluir caso você precise:
+
+modelBuilder.Entity<MachineUserPM>().HasNoKey();
+modelBuilder.Entity<BattleUnitPM>().HasNoKey();
+modelBuilder.Entity<ExemploPM>().HasNoKey();
+
+Essa linha é necessaria para evitar erros com o ASP.NET Identity
+
+base.OnModelCreating(modelBuilder);
+
