@@ -51,7 +51,7 @@ namespace BaseProject.API.Controllers
         public async Task<IActionResult> GerarUsuario()
         {
             //Preencha os dados e acesse https://localhost:44301/Service/GerarUsuario
-            string email = "admin@pro4tech.com.br"; //Seu email
+            string email = "admin@jptech.com.br"; //Seu email
             string nome = "Admin"; //Seu nome
             string senha = "@Sp230198"; //Sua senha
 
@@ -184,9 +184,9 @@ namespace BaseProject.API.Controllers
             {
                 var empresa = new Empresa
                 {
-                    RazaoSocial = "PRO4TECH TECNOLOGIA E CONSULTORIA LTDA",
-                    NomeFantasia = "Pro4Tech",
-                    CNPJ = "22869671000126",
+                    RazaoSocial = "JP TECH LTDA",
+                    NomeFantasia = "JP TECH",
+                    CNPJ = "98539659000115",
                     DataCadastro = DateTime.Now.ToBrasiliaTime(),
                     Ativa = true
                 };
